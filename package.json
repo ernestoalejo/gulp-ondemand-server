@@ -1,0 +1,39 @@
+{
+  "name": "gulp-ondemand-server",
+  "version": "0.0.0",
+  "description": "Gulp plugin that runs a local server that executes tasks when a page is requested, not when the file changes",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ernestoalejo/gulp-ondemand-server.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "server",
+    "proxy",
+    "development",
+    "on-demand"
+  ],
+  "author": "Ernesto Alejo Oltra",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ernestoalejo/gulp-ondemand-server/issues"
+  },
+  "homepage": "https://github.com/ernestoalejo/gulp-ondemand-server",
+  "dependencies": {
+    "underscore": "~1.5.2",
+    "connect": "~2.12.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "gulp-util": "~2.2.14",
+    "gulp": "~3.5.2",
+    "jshint-stylish": "~0.1.5",
+    "gulp-jshint": "~1.4.0",
+    "gulp-mocha": "~0.4.1",
+    "bytes": "~0.2.1"
+  }
+}
