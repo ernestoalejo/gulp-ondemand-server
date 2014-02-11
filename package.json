@@ -1,6 +1,6 @@
 {
   "name": "gulp-ondemand-server",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Gulp plugin that runs a local server that executes tasks when a page is requested, not when the file changes",
   "main": "index.js",
   "scripts": {
