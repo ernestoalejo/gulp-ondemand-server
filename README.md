@@ -50,6 +50,30 @@ gulp.task('default', function() {
 **NOTE**: If you want custom local domains in Linux, you can edit /etc/hosts and copy-paste the localhost line with the new domain.
 
 
+## API
+
+### watch(globs, tasks)
+
+ * `globs` - array of globs of files to watch for changes.
+ * `tasks` - array of tasks to run when a requests arrive and the files have changed.
+
+Both globs and tasks can be a single string too.
+
+### registerHost(host, proxyUrl)
+
+  * `host` - the host we're registering
+  * `proxyUrl` - the target URL for the proxy; protocol, host and port only. E.g.: `http://localhost:5623`
+
+You should register all hosts you want to use before starting the server (calling this function as much as needed).
+
+### start(port)
+
+ * `port` - the port we'll listen to
+
+All registered hosts will share this port.
+
+
+
 ## Why?
 
 Mainly because I have a not-so-good laptop that doesn't keep up compiling every time I change the Sublime tab (and autosaves).
