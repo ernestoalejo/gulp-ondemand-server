@@ -3,7 +3,7 @@
 
 > Runs a local server that executes tasks when a page is requested, not when the files change
 
-It will keep track of the file changes; but instead of running the tasks directly it will run them when a request arrives, before it hits the real development server.
+It will keep track of the file changes; but instead of running the tasks directly it will run them all at once when a request arrives, before it hits the real development server.
 
 ## Installation
 
@@ -47,14 +47,11 @@ gulp.task('default', function() {
 });
 ```
 
-**NOTE**: If you want custom local domains in Linux, you can edit /etc/hosts
-and copy-paste the localhost line with the new domain.
+**NOTE**: If you want custom local domains in Linux, you can edit /etc/hosts and copy-paste the localhost line with the new domain.
 
 
 ## Why?
 
-Mainly because I have a not-so-good laptop that doesn't keep up compiling
-every time I change the Sublime tab (and autosaves).
+Mainly because I have a not-so-good laptop that doesn't keep up compiling every time I change the Sublime tab (and autosaves).
 
-With this plugin I can develop and save as much as I want, and it will execute
-only the needed tasks before any request hits the real page.
+With this plugin I can develop and save as much as I want, and it will execute only the needed tasks before any request hits the real page (when I refresh the page).
