@@ -50,3 +50,10 @@ gulp.task('default', function() {
 and copy-paste the localhost line with the new domain.
 
 
+## Why?
+
+Mainly because I have a not-so-good laptop that doesn't keep up compiling
+every time I change the Sublime tab (and autosaves).
+
+With this plugin I can develop and save as much as I want, and it will execute
+only the needed tasks before any request hits the real page.

@@ -45,7 +45,7 @@ Server.prototype.watch = function(globs, tasks) {
 Server.prototype.start = function(port) {
   var that = this;
 
-  // Prefix all host with the port number
+  // Prefix all hosts with the port number
   var hosts = {};
   _.each(this.hosts_, function(target, host) {
     hosts[host + ':' + port] = target;
@@ -101,7 +101,8 @@ Server.prototype.serve_ = function(req, res) {
   // Try to see if it's a known host
   var target = this.hosts_[req.headers.host];
   if (!target) {
-    res.end('Unrecognized host: ' + req.headers.host);
+    res.end('Unrecognized host: ' + req.headers.host + '\n' +
+      'Add it using registerHost(...) before starting the server.');
     return;
   }
 
@@ -123,6 +124,9 @@ Server.prototype.serve_ = function(req, res) {
     return;
   }
 
+  // We insert a new task with a highly strange name, and put the queued
+  // tasks as deps. That way we can know when all of them finish and respond
+  // the pending requests
   var tasks = this.scheduledTasks_.slice();
   gulp.task('gulp-ondemand-server-finished', tasks, function() {
     // Call all the waiting callbacks for the requests
