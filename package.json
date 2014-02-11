@@ -15,7 +15,8 @@
     "server",
     "proxy",
     "development",
-    "on-demand"
+    "on-demand",
+    "gulp"
   ],
   "author": "Ernesto Alejo Oltra",
   "license": "BSD-3-Clause",
