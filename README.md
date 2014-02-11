@@ -3,6 +3,7 @@
 
 > Runs a local server that executes tasks when a page is requested, not when the files change
 
+It will keep track of the file changes; but instead of running the tasks directly it will run them when a request arrives, before it hits the real development server.
 
 ## Installation
 
