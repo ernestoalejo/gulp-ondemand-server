@@ -1,7 +1,7 @@
 
 # gulp-ondemand-server
 
-> Runs a local server that executes tasks when a page is requested, not when the file changes
+> Runs a local server that executes tasks when a page is requested, not when the files change
 
 
 ## Installation
@@ -31,11 +31,11 @@ gulp.task('default', function() {
 
   // You should register the host you need, as well as the target URL
   // they're proxying.
-  // For example to redirect everything from localhost:9810 ---> localhost:80
+  // For example to proxy everything from localhost:9810 ---> localhost:80
   server.registerHost('localhost', 'http://localhost');
 
   // You can have several hosts registered, as long as they share the proxy port
-  // This will redirect http://mydomain.localhost:9810 ---> foo:80
+  // This will proxy http://mydomain.localhost:9810 ---> foo:80
   server.registerHost('mydomain.localhost', 'http://foo');
 
   // Another example: example-local:9810 ---> localhost:7653
@@ -45,5 +45,8 @@ gulp.task('default', function() {
   server.start(9810);
 });
 ```
+
+**NOTE**: If you want custom local domains in Linux, you can edit /etc/hosts
+and copy-paste the localhost line with the new domain.
 
 
