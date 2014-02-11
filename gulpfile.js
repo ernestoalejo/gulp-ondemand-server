@@ -33,6 +33,7 @@ gulp.task('bar', function() {
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
+/* jshint unused:vars */
 gulp.task('test', function(cb) {
   var Server = require('./index');
 
@@ -42,3 +43,4 @@ gulp.task('test', function(cb) {
   server.registerHost('hotels.localhost', 'http://hotels.localhost');
   server.start(9810);
 });
+/* jshint unused:true */
