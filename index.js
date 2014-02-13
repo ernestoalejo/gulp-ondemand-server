@@ -124,11 +124,24 @@ Server.prototype.serve_ = function(req, res) {
     return;
   }
 
+  this.runTasks_(req, res);
+};
+
+
+Server.prototype.runTasks_ = function(req, res) {
+  var that = this;
+  
   // We insert a new task with a highly strange name, and put the queued
   // tasks as deps. That way we can know when all of them finish and respond
   // the pending requests
   var tasks = this.scheduledTasks_.slice();
   gulp.task('gulp-ondemand-server-finished', tasks, function() {
+    // If there are new pending tasks since we started, run them now
+    if (that.scheduledTasks_.length) {
+      that.runTasks_(req, res);
+      return;
+    }
+
     // Call all the waiting callbacks for the requests
     _.each(that.callbacks_, function(fn) {
       fn();
